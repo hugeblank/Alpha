@@ -4,7 +4,7 @@ if betaBot.tpList[name] ~= nil then
         bagelBot.tell(name, "&eTeleport request accepted")
         bagelBot.tell(args[1], "&eTeleport request accepted")
         local req = betaBot.tpList[name][args[1]]
-        if not req[2] then
+        if not req[2] then --commands.tpl is from FTBUtilities.
             commands.tpl(args[1], name)
         else
             commands.tpl(name, args[1])
