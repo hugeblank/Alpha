@@ -1,0 +1,1 @@
+Returns a pong to the user.

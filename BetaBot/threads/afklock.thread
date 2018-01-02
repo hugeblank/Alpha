@@ -1,0 +1,7 @@
+while true do
+    local isAFK = bagelBot.getPersistence("isAFK")
+    for k, v in pairs(isAFK) do
+        local _, res = commands.tp(v[1], v[2], "~", v[4])
+    end
+    sleep()
+end

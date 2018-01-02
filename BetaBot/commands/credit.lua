@@ -1,0 +1,1 @@
+bagelBot.tell("@a", "View &6Beta&cBot&r at https://github.com/roger109z/BetaBot/")
