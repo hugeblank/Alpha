@@ -3,7 +3,7 @@ local admins = bagelBot.getPersistence(betaBot.admindata)
 if args[1] == nil then
 	if fs.exists("/motd.txt") then
 		motd = fs.open("/motd.txt", "r")
-		bagelBot.tell(name, motd.readAll())
+		bagelBot.tell(name, motd.readAll(), true)
 		motd.close()
 	else
 		bagelBot.tell(name, "&a Welcome to the server!")
