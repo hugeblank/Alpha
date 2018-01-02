@@ -1,7 +1,7 @@
-name, args = bagelBot.out()
+local name, args = bagelBot.out()
 local eqn = ""
 local hf = true
-for i = 2, #args do
+for i = 1, #args do
     eqn = eqn..args[i]
 end
 if eqn:find("function") then hf = false end
@@ -16,7 +16,6 @@ if hf then
     end
     if ver then
         bagelBot.tell(name, "&2Answer: &6"..tostring(ans))
-        print("told "..name.." that "..eqn.." = "..tostring(ans))
     else
         bagelBot.tell(name, "&cNot a valid equation!")
     end
