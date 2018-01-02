@@ -1,0 +1,1 @@
+Get the Ticks Per Second of the server
