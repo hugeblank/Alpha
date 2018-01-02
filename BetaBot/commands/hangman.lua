@@ -17,7 +17,7 @@ if betaBot.game ~= true then
         end
         bagelBot.tell("@a", "&6Game of hangman started! type !hangman and your single letter guess or the whole word.\\nHint: &1"..betaBot.guess)
     else
-        bagelBot.tell(name, "&6Classic hangman! to start a game type or click: &c&g!hangman start&6 to start a game!")
+        bagelBot.tell(name, "&6Classic hangman! to start a game type or click: &c&g(!hangman start)!hangman start&6 to start a game!")
     end
 else
     if args[1] == nil then
