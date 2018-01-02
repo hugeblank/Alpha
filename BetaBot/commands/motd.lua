@@ -1,8 +1,8 @@
 name, args = bagelBot.out()
 local admins = bagelBot.getPersistence(betaBot.admindata)
 if args[1] == nil then
-	if fs.exists("../motd.txt") then
-		motd = fs.open("../motd.txt", "r")
+	if fs.exists("/motd.txt") then
+		motd = fs.open("/motd.txt", "r")
 		bagelBot.tell(name, motd.readAll())
 		motd.close()
 	else
