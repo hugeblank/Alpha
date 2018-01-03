@@ -1,5 +1,5 @@
 # BetaBot
-Repository for BetaBot, a plugin for BagelBot.
+Repository for BetaBot, a plugin for [BagelBot](https://github.com/hugeblank/BagelBot).
 
 BetaBot was originally a program created by [roger109z](https://github.com/roger109z). Due to its bulkiness, I integrated it into the syntax/format that BagelBot accepts. roger109z has write access to this repository along with myself. Credit should go his way for most of the code.
 ## Installation
