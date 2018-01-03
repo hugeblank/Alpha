@@ -1,6 +1,6 @@
 while true do
     local isAFK = bagelBot.getPersistence("isAFK")
-    if not isAFK then bagelBot.setPersistence("isAFK", {}) end
+    if not isAFK then bagelBot.setPersistence("isAFK", {}) isAFK = {} end
     for k, v in pairs(isAFK) do
         local _, res = commands.tp(v[1], v[2], "~", v[4])
     end
