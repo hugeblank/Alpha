@@ -1,5 +1,5 @@
 local modem = peripheral.wrap("top")
 while true do
   local tbl = os.pullEvent("chat_message") 
-  modem.transmit(65531, 65531, {name = tbl[2], message = tbl[3]}) 
+  modem.transmit(65531, 65531, {name = tbl[3], message = tbl[4]}) 
 end
