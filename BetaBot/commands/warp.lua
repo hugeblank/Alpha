@@ -37,7 +37,7 @@ if true then
       end
     end
   elseif args[1] == "remove" and betaBot.isAdmin(name) then
-    if args[2] ~= nil and persist(args[2]) ~= nil then
+    if args[2] ~= nil and persist[args[2]] ~= nil then
       table.remove(persist, args[2])
       bagelBot.setPersistence("betaBot.warps", persist)
       bagelBot.tell(name, "Removed warp: &6"..args[2].."!")
