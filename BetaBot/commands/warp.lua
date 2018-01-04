@@ -6,7 +6,7 @@ if persist == nil then
   persist = {}
 end
 if true then
-  if args[1] ~= "set" and args[1] ~= "list" then
+  if args[1] ~= "set" and args[1] ~= "list" and args[1] ~= "remove" then
     if persist[args[1]] ~= nil then
       local location = persist[args[1]]
       commands.cofh("tpx", name, location["x"], location["y"], location["z"], location["dim"])
@@ -15,10 +15,13 @@ if true then
       bagelBot.tell(name, "&cWarp does not exist!")
     end
   elseif args[1] == "list" then
-    local str = "Warps: ("..tostring(#persist)..") "
+    local str = "Warps: (&c&r) "
+    local cnt = 0
     for k, _ in pairs(persist) do
+      cnt = cnt+1
       str = str.."&6&h(Click to Teleport!)&g(!warp "..k..")"..k.."&r, "
     end
+    str = str:sub(1, 10)..tostring(cnt)..str:sub(11)
     str = str:sub(1, -2)
     bagelBot.tell(name, str)
   elseif args[1] == "set" and betaBot.isAdmin(name) then
