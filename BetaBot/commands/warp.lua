@@ -1,7 +1,7 @@
 local name, args = bagelBot.out()
 local persist = bagelBot.getPersistence("betaBot.warps")
 
-if persist == false then
+if persist == nil then
   bagelBot.setPersistence("betaBot.warps", {})
   persist = {}
 end
