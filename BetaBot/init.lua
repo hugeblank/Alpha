@@ -9,7 +9,7 @@ _G.betaBot.game = false
 _G.betaBot.admindata = "adminList" --change this if there are persistence conflicts.
 
 _G.betaBot.isAdmin = function(name) --checks the admin list for a name
-	local admins = bagelBot.getPersistence(betaBot.admindata)
+	local admins = bagelBot.getPersistence("betaBot.admindata")
 	local pass = false
 	for i = 1, #admins do
 		if admins[i] == name then
