@@ -1,10 +1,11 @@
 local name, args = bagelBot.out()
 local persist = bagelBot.getPersistence("betaBot.warps")
 
-if persist == false or persist[1] == nil then
+if persist == false then
   bagelBot.setPersistence("betaBot.warps", {})
   persist = {}
-else
+end
+if true then
   if args[1] ~= "set" and args[1] ~= "list" then
     if persist[args[1]] ~= nil then
       local location = persist[args[1]]
