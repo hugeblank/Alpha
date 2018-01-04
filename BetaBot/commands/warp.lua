@@ -22,7 +22,7 @@ if true then
       str = str.."&6&h(Click to Teleport!)&g(!warp "..k..")"..k.."&r, "
     end
     str = str:sub(1, 10)..tostring(cnt)..str:sub(11)
-    str = str:sub(1, -2)
+    str = str:sub(1, -3)
     bagelBot.tell(name, str)
   elseif args[1] == "set" and betaBot.isAdmin(name) then
     if args[2] ~= nil and tonumber(args[3]) ~= nil and tonumber(args[4]) ~= nil and tonumber(args[5]) ~= nil and tonumber(args[6]) ~= nil and persist[args[2]] == nil then
