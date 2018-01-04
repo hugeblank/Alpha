@@ -12,7 +12,7 @@ if true then
       commands.cofh("tpx", name, location["x"], location["y"], location["z"], location["dim"])
       bagelBot.tell(name, "Teleported to warp: &6"..args[1])
     else
-      bagelBot.tell(name, "&cWarp does not exist!")
+      bagelBot.tell(name, "&cWarp does not exist! Use &6&h(List Warps)&g(!warp list)!warp list&r&c for a list of warps")
     end
   elseif args[1] == "list" then
     local str = "Warps: (&c&r) "
