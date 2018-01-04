@@ -15,13 +15,13 @@ if betaBot.game ~= true then
         for k, v in pairs(betaBot.letters) do
             betaBot.guess = betaBot.guess.."_ "
         end
-        bagelBot.tell("@a", "&6Game of hangman started! type !hangman and your single letter guess or the whole word.\\nHint: &1"..betaBot.guess)
+        bagelBot.tell("@a", "&6Game of hangman started! type !hangman and your single letter guess or the whole word.\\nHint: &1"..betaBot.guess, false, betaBot.name)
     else
-        bagelBot.tell(name, "&6Classic hangman! to start a game type or click: &c&g(!hangman start)!hangman start&6 to start a game!")
+        bagelBot.tell(name, "&6Classic hangman! to start a game type or click: &c&g(!hangman start)!hangman start&6 to start a game!", false, betaBot.name)
     end
 else
     if args[1] == nil then
-        bagelBot.tell(name, "&cPlease provide a letter to guess!")
+        bagelBot.tell(name, "&cPlease provide a letter to guess!", false, betaBot.name)
         betaBot.guess = ""
         for k, v in pairs(betaBot.letters) do
             if v[2] == false then
@@ -30,8 +30,8 @@ else
                 betaBot.guess = betaBot.guess..v[1].." "
             end
         end
-        bagelBot.tell("@a", "&1"..betaBot.guess)
-        bagelBot.tell("@a", "&6"..tostring(#betaBot.incorrect).." incorrect guesses!")
+        bagelBot.tell("@a", "&1"..betaBot.guess, false, betaBot.name)
+        bagelBot.tell("@a", "&6"..tostring(#betaBot.incorrect).." incorrect guesses!", false, betaBot.name)
     else
         local test = false
         if string.len(args[1]) == 1 then
@@ -50,7 +50,7 @@ else
             end
         end
         if test == true then
-            bagelBot.tell("@a", name.." &2guessed correctly!")
+            bagelBot.tell("@a", name.." &2guessed correctly!", false, betaBot.name)
             local cnt = 0
             local cntMx = 0
             for _, v in pairs(betaBot.letters) do
@@ -60,17 +60,17 @@ else
                 end
             end
             if cnt == cntMx then
-                bagelBot.tell("@a", "&2You Won! The word was: &6"..word())
+                bagelBot.tell("@a", "&2You Won! The word was: &6"..word(), false, betaBot.name)
                 betaBot.game = false
             end
         else
             betaBot.incorrect[#betaBot.incorrect+1] = args[1]
-            bagelBot.tell("@a", name.." &cguessed incorrectly!")
+            bagelBot.tell("@a", name.." &cguessed incorrectly!", false, betaBot.name)
             if #betaBot.incorrect >= 10 then
-                bagelBot.tell("@a", "&cRan out of guesses! game over! The word was: &6"..word())
+                bagelBot.tell("@a", "&cRan out of guesses! game over! The word was: &6"..word(), false, betaBot.name)
                 betaBot.game = false
             else
-                bagelBot.tell("@a", "&6"..tostring(10-#betaBot.incorrect).." guesses left")
+                bagelBot.tell("@a", "&6"..tostring(10-#betaBot.incorrect).." guesses left", false, betaBot.name)
             end
         end
         if betaBot.game then
@@ -82,7 +82,7 @@ else
                     betaBot.guess = betaBot.guess.."_ "
                 end
             end
-            bagelBot.tell("@a", "&1"..betaBot.guess)
+            bagelBot.tell("@a", "&1"..betaBot.guess, false, betaBot.name)
         else 
             betaBot.incorrect = {}
             betaBot.guess = ""

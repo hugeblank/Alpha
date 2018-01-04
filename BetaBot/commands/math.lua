@@ -15,10 +15,10 @@ if hf then
         ver = false
     end
     if ver then
-        bagelBot.tell(name, "&2Answer: &6"..tostring(ans))
+        bagelBot.tell(name, "&2Answer: &6"..tostring(ans), false, betaBot.name)
     else
-        bagelBot.tell(name, "&cNot a valid equation!")
+        bagelBot.tell(name, "&cNot a valid equation!", false, betaBot.name)
     end
 else
-    bagelBot.tell(name, "&cOkay you can stop trying to test the bounds now.")
+    bagelBot.tell(name, "&cOkay you can stop trying to test the bounds now.", false, betaBot.name)
 end

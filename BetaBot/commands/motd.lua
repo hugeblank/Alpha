@@ -6,7 +6,7 @@ if args[1] == nil then
 		bagelBot.tell(name, motd.readAll(), true)
 		motd.close()
 	else
-		bagelBot.tell(name, "&a Welcome to the server!")
+		bagelBot.tell(name, "&a Welcome to the server!", false, betaBot.name)
 	end
 elseif args[1] == "set" then
 	if betaBot.isAdmin(name) then
@@ -17,6 +17,6 @@ elseif args[1] == "set" then
 		motd.close()
 		bagelBot.tell(name, "&aMoTD set!")
 	else
-		bagelBot.tell(name, "&cYou do not have permission to use this command.")
+		bagelBot.tell(name, "&cYou do not have permission to use this command.", false, betaBot.name)
 	end
 end

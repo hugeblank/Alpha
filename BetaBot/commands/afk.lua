@@ -13,7 +13,7 @@ if afk == false then
     for i in res[1]:gmatch("%S+") do
         amod[#amod+1] = i:gsub("[,]", "")
     end
-    bagelBot.tell("@a", "&6*"..name.." is AFK.")
+    bagelBot.tell("@a", "&6*"..name.." is AFK.", false, betaBot.name)
     print(name.." is AFK.")
     isAFK[#isAFK+1] = {name, amod[4], amod[5], amod[6]}
     commands.setblock(amod[4], "253", amod[6], "barrier 0")
@@ -27,7 +27,7 @@ else
             bagelBot.setPersistence("isAFK", isAFK)
             commands.setblock(temppos[2], "253", temppos[4], "air 0")
             commands.tp(table.concat(temppos, " "))
-            bagelBot.tell("@a", "&6*"..name.." is no longer AFK.")
+            bagelBot.tell("@a", "&6*"..name.." is no longer AFK.", false, betaBot.name)
             print(name.." is no longer AFK.")
         end
     end
