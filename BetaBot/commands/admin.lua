@@ -17,7 +17,7 @@ if args[1] == "set" then
 		if confirm == name then
 			levels = {}
 			levels[name] = args[3]
-			bagelBot.setPersistence(betaBot.levelData, )
+			bagelBot.setPersistence(betaBot.levelData, levels)
 			print("Added "..name.."to admin list.")
 		end
 	end
