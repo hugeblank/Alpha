@@ -8,10 +8,11 @@ _G.betaBot.letters = {}
 _G.betaBot.game = false
 _G.betaBot.warps = "warpList"
 _G.betaBot.admindata = "adminList" --change this if there are persistence conflicts.
+_G.betaBot.vipdata = "vipList"
+
 
 _G.betaBot.isAdmin = function(name) --checks the admin list for a name
 	local admins = bagelBot.getPersistence(betaBot.admindata)
-	local pass = false
 	for i = 1, #admins do
 		if admins[i] == name then
 			return true, i
@@ -19,7 +20,15 @@ _G.betaBot.isAdmin = function(name) --checks the admin list for a name
 	end
 	return false
 end
-
+_G.betaBot.isVIP(name)
+	local vips = bagelBot.getPersistence(betaBot.vipdata)
+	for i = 1, #vips do
+		if vips[i] == name then
+			return true, i
+		end
+	end
+	return betaBot.isAdmin(name)
+end
 local wordList = "https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-usa.txt"
 local site = http.get(wordList)
 repeat --puts the words into the thingy
