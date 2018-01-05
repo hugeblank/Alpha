@@ -28,7 +28,13 @@ _G.betaBot.getLevel = function(name) --returns the level of a player
 	return betaBot.playerLevel
 end
 _G.betaBot.isAdmin = function(name) --checks the admin list for a name
-	if betaBot.getLevel(name) == betaBot.adminLevel then
+	if betaBot.getLevel(name) >= betaBot.adminLevel then
+		return true
+	end
+	return false
+end
+_G.betaBot.isVIP = function(name) --checks the admin list for a name
+	if betaBot.getLevel(name) >= betaBot.vipLevel then
 		return true
 	end
 	return false
