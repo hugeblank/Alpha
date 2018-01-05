@@ -21,7 +21,7 @@ if args[1] == "set" then
 			print("Added "..name.."to admin list.")
 		end
 	end
-elseif args[1] == "list" then
+else
 	bagelBot.tell(name, "Current Admins: ", false, betaBot.name)
 	if levels then
 		for k, v in pairs(levels) do
