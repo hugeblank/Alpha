@@ -6,6 +6,7 @@ _G.betaBot.incorrect = {}
 _G.betaBot.words = {}
 _G.betaBot.letters = {}
 _G.betaBot.game = false
+_G.betaBot.warps = "warpList"
 _G.betaBot.admindata = "adminList" --change this if there are persistence conflicts.
 
 _G.betaBot.isAdmin = function(name) --checks the admin list for a name

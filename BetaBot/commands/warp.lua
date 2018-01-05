@@ -1,5 +1,5 @@
 local name, args = bagelBot.out()
-local persist = bagelBot.getPersistence("betaBot.warps")
+local persist = bagelBot.getPersistence(betaBot.warps)
 
 if persist == nil then
   bagelBot.setPersistence("betaBot.warps", {})
@@ -27,7 +27,7 @@ if true then
   elseif args[1] == "set" and betaBot.isAdmin(name) then
     if args[2] ~= nil and tonumber(args[3]) ~= nil and tonumber(args[4]) ~= nil and tonumber(args[5]) ~= nil and tonumber(args[6]) ~= nil and persist[args[2]] == nil then
       persist[args[2]] = {x = tonumber(args[3]), y = tonumber(args[4]), z = tonumber(args[5]), dim = tonumber(args[6])}
-      bagelBot.setPersistence("betaBot.warps", persist)
+      bagelBot.setPersistence(betaBot.warps, persist)
       bagelBot.tell(name, "Warp &6&h(Click to Teleport!)&g(!warp "..args[2]..")"..args[2].."&r set!")
     else
       if persist[args[2]] ~= nil then
@@ -39,7 +39,7 @@ if true then
   elseif args[1] == "remove" and betaBot.isAdmin(name) then
     if args[2] ~= nil and persist[args[2]] ~= nil then
       table.remove(persist, args[2])
-      bagelBot.setPersistence("betaBot.warps", persist)
+      bagelBot.setPersistence(betaBot.warps, persist)
       bagelBot.tell(name, "Removed warp: &6"..args[2].."!")
     else
       bagelBot.tell("&cWarp does not Exist!")
