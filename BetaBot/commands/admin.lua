@@ -23,7 +23,7 @@ if args[1] == "set" then
 elseif args[1] == "list" then
 	bagelBot.tell(name, "Current Admins: ", false, betaBot.name)
 	for k, v in pairs(levels) do
-		if tonumber(betaBot.adminLevel) and v >= tonumber(betaBot.adminLevel) then
+		if tonumber(v) and tonumber(v) >= tonumber(betaBot.adminLevel) then
 			bagelBot.tell(name, k, true)
 		end
 	end
