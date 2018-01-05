@@ -23,7 +23,7 @@ _G.betaBot.getLevel = function(name) --returns the level of a player
 		return betaBot.playerLevel
 	end
 	if lList[name] then
-		return lList[name]
+		return tonumber(lList[name])
 	end
 	return betaBot.playerLevel
 end
