@@ -15,16 +15,17 @@ if args[1] == "set" then
 		bagelBot.tell(name, "No admins exist. Please confirm you are opped by going into the bot command computer and typing in your minecraft username.", false, betaBot.name)
 		local confirm = read()
 		if confirm == name then
-			bagelBot.setPersistence(betaBot.levelData, {name})
+			bagelBot.setPersistence(betaBot.levelData, {name = args[3]})
 			print("Added "..name.."to admin list.")
 		end
 	end
 elseif args[1] == "list" then
 	bagelBot.tell(name, "Current Admins: ", false, betaBot.name)
 	if levels then
-	for k, v in pairs(levels) do
-		if tonumber(v) and tonumber(v) >= tonumber(betaBot.adminLevel) then
-			bagelBot.tell(name, k, true)
+		for k, v in pairs(levels) do
+			if tonumber(v) and tonumber(v) >= tonumber(betaBot.adminLevel) then
+				bagelBot.tell(name, k, true)
+			end
 		end
 	end
 end
