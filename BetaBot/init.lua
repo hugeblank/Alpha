@@ -1,3 +1,9 @@
+--------Rank Levels--------
+_G.betaBot.adminLevel = 2
+_G.betaBot.vipLevel = 1
+_G.betaBot.playerLevel = 0
+---------------------------
+
 _G.betaBot = {}
 _G.betaBot.name = "</&cBeta&r>&6Bot"
 _G.betaBot.tpList = {}
@@ -14,30 +20,18 @@ _G.betaBot.getLevel = function(name) --returns the level of a player
 	local lList = bagelBot.getPersistence(betaBot.levelData)
 	if not lList then
 		bagelBot.setPersistence(bagelBot.levelData, {})
-		return 0
+		return betaBot.playerLevel
 	end
 	if lList[name] then
 		return lList[name]
 	end
-	return 0
+	return betaBot.playerLevel
 end
 _G.betaBot.isAdmin = function(name) --checks the admin list for a name
-	local admins = bagelBot.getPersistence(betaBot.admindata)
-	for i = 1, #admins do
-		if admins[i] == name then
-			return true, i
-		end
+	if betaBot.getLevel(name) == betaBot.adminLevel then
+		return true
 	end
 	return false
-end
-_G.betaBot.isVIP(name)
-	local vips = bagelBot.getPersistence(betaBot.vipdata)
-	for i = 1, #vips do
-		if vips[i] == name then
-			return true, i
-		end
-	end
-	return betaBot.isAdmin(name)
 end
 local wordList = "https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-usa.txt"
 local site = http.get(wordList)
