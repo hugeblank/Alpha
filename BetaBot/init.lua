@@ -9,8 +9,18 @@ _G.betaBot.game = false
 _G.betaBot.warps = "warpList"
 _G.betaBot.admindata = "adminList" --change this if there are persistence conflicts.
 _G.betaBot.vipdata = "vipList"
-
-
+_G.betaBot.levelData = "levelList"
+_G.betaBot.getLevel = function(name) --returns the level of a player
+	local lList = bagelBot.getPersistence(betaBot.levelData)
+	if not lList then
+		bagelBot.setPersistence(bagelBot.levelData, {})
+		return 0
+	end
+	if lList[name] then
+		return lList[name]
+	end
+	return 0
+end
 _G.betaBot.isAdmin = function(name) --checks the admin list for a name
 	local admins = bagelBot.getPersistence(betaBot.admindata)
 	for i = 1, #admins do
