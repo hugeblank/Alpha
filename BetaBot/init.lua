@@ -1,10 +1,10 @@
+_G.betaBot = {}
 --------Rank Levels--------
 _G.betaBot.adminLevel = 2
 _G.betaBot.vipLevel = 1
 _G.betaBot.playerLevel = 0
 ---------------------------
 
-_G.betaBot = {}
 _G.betaBot.name = "</&cBeta&r>&6Bot"
 _G.betaBot.tpList = {}
 _G.betaBot.guess = ""
