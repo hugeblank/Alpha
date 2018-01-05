@@ -1,5 +1,5 @@
 _G.betaBot = {}
-
+_G.betaBot.name = "</&cBeta&r>&6Bot"
 _G.betaBot.tpList = {}
 _G.betaBot.guess = ""
 _G.betaBot.incorrect = {}
