@@ -1,6 +1,6 @@
 name, args = bagelBot.out()
 
-local levels = bagelBot.getPersistence(betaBot.admindata)
+local levels = bagelBot.getPersistence(betaBot.levelData)
 if args[1] == "set" then
 	if levels then
 		if betaBot.isAdmin(name) then
