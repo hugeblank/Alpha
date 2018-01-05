@@ -3,7 +3,7 @@ name, args = bagelBot.out()
 local levels = bagelBot.getPersistence(betaBot.levelData)
 if args[1] == "set" then
 	if levels then
-		if betaBot.isAdmin(name) then
+		if betaBot.getLevel(name) >= betaBot.adminLevel then
 			levels[args[2]] = tonumber(args[3])
 			bagelBot.setPersistence(betaBot.levelData, levels)
 			bagelBot.tell(name, "&a"..args[2].." is now an admin.", false, betaBot.name)
