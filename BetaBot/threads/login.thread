@@ -1,5 +1,5 @@
 _G.betaBot.players = {}
-
+--[[
 while true do
     local _, plrs = commands.testfor("@a")
     for k, v in pairs(plrs) do
@@ -16,3 +16,4 @@ while true do
     end
     sleep(1)
 end
+--]]
