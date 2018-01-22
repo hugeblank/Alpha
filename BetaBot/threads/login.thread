@@ -1,19 +1,15 @@
 _G.betaBot.players = {}
---[[
 while true do
-    local _, plrs = commands.testfor("@a")
+    local tplrs = bagelBot.getPlayers()
+    local plrs = {}
+    for i = 1, #tplrs do
+        plrs[tplrs[i]] = tplrs[i]
+    end
     for k, v in pairs(plrs) do
-        local v = string.sub(v, 7)
         if betaBot.players[v] == nil then
             betaBot.players[v] = v
             print(v.." joined")
             os.queueEvent("chat_message", "", v, "!motd")
         end
-    end
-    betaBot.players = {}
-    for _, v in pairs(plrs) do
-        betaBot.players[string.sub(v, 7)] = string.sub(v, 7)
-    end
-    sleep(1)
+    players = plrs
 end
---]]
