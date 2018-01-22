@@ -11,5 +11,6 @@ while true do
             print(v.." joined")
             os.queueEvent("chat_message", "", v, "!motd")
         end
-    players = plrs
+    end
+    betaBot.players = plrs
 end
