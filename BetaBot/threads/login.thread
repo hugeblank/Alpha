@@ -10,7 +10,11 @@ while true do
             betaBot.players[v] = v
             print(v.." joined")
             os.queueEvent("chat_message", "", v, "!motd")
+            sleep(.05)
         end
     end
-    betaBot.players = plrs
+    betaBot.players = {}
+    for k, v in pairs(plrs) do
+        betaBot.players[v] = v
+    end    
 end
