@@ -17,4 +17,5 @@ while true do
     for k, v in pairs(plrs) do
         betaBot.players[v] = v
     end    
+    sleep(1)
 end
