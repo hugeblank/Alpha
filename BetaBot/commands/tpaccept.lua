@@ -9,7 +9,7 @@ if betaBot.tpList[name] ~= nil then
         else
             commands.cofh("tpx", name, args[1])
         end
-        betaBot.tpList[args[1]] = nil
+        betaBot.tpList[name][args[1]] = nil
         if not req[2] then
             print("&aTeleported "..args[1].." to "..name, false, betaBot.name)
         else
