@@ -9,7 +9,7 @@ while true do
         if betaBot.players[v] == nil then
             betaBot.players[v] = v
             print(v.." joined")
-            os.queueEvent("chat_message", "!motd", "", v)
+            bagelBot.queueEvent(v, "!motd")
             sleep(.05)
         end
     end

@@ -1,4 +1,3 @@
---[[
 while true do
     local isAFK = bagelBot.getPersistence("isAFK")
     if not isAFK then bagelBot.setPersistence("isAFK", {}) isAFK = {} end
@@ -7,4 +6,3 @@ while true do
     end
     sleep()
 end
---]]
