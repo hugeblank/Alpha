@@ -4,12 +4,17 @@ if betaBot.tpList[name] ~= nil then
         bagelBot.tell(name, "&eTeleport request accepted", false, betaBot.name)
         bagelBot.tell(args[1], "&eTeleport request accepted", false, betaBot.name)
         local req = betaBot.tpList[name][args[1]]
-        if not req[2] then --commands.tpl is from FTBUtilities.
-            commands.cofh("tpx", args[1], name)
+        local res
+        if not req[2] then
+            res = commands.exec("tp", args[1], name)
         else
-            commands.cofh("tpx", name, args[1])
+            res = commands.exec("tp", name, args[1])
         end
         betaBot.tpList[name][args[1]] = nil
+        if res then
+            bagelBot.tell(name, "&cTeleport failed, users not in same dimension", false, betaBot.name)
+            bagelBot.tell(args[1], "&cTeleport failed, users not in same dimension", false, betaBot.name)
+        end
         if not req[2] then
             print("&aTeleported "..args[1].." to "..name, false, betaBot.name)
         else
