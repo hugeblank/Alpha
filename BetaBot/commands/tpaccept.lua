@@ -6,9 +6,9 @@ if betaBot.tpList[name] ~= nil then
         local req = betaBot.tpList[name][args[1]]
         local res
         if not req[2] then
-            res = commands.exec("tp", args[1], name)
+            res = commands.tp(args[1], name)
         else
-            res = commands.exec("tp", name, args[1])
+            res = commands.tp(name, args[1])
         end
         betaBot.tpList[name][args[1]] = nil
         if res then
