@@ -11,7 +11,7 @@ if betaBot.tpList[name] ~= nil then
             res = commands.tp(name, args[1])
         end
         betaBot.tpList[name][args[1]] = nil
-        if res then
+        if not res then
             bagelBot.tell(name, "&cTeleport failed, users not in same dimension", false, betaBot.name)
             bagelBot.tell(args[1], "&cTeleport failed, users not in same dimension", false, betaBot.name)
         end
