@@ -1,1 +1,0 @@
-Teleports you to a pre-defined warp area

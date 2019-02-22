@@ -1,2 +1,0 @@
-Adds/Removes/Lists admins, people that can manipulate vital information on bagelBot.
-<set | remove | list> <username>

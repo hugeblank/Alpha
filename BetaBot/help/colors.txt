@@ -1,1 +1,0 @@
-Displays colors on their corresponding hexadecimal digit

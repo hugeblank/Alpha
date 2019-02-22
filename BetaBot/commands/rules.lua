@@ -1,2 +1,0 @@
-name = bagelBot.out()
-bagelBot.tell(name, {"&6*&rUse Common Sense", "&6*&rNo Griefing Claimed Land", "&6*&rYou are Not a Super Hacker, Don't Hack", "&6*&rRespect All Players", "&6*&rNo Trolling/Flaming", "&6*&rJust Don't Be Dumb", "&6*&rRespect Admins (people with pink (Or green) names)", "&6*&rKeep advertising to a minimum", "&6*&rClaim what you need and only what you need.", "&6*&rDo not claim infrastructure, there are many wireless transportation methods availible.", "&6*&rOh and Have Fun!" })
