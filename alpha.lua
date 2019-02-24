@@ -230,12 +230,14 @@ local function admin(name, args, data)
 
     if args[1] == "promote" then
         if #admin_list > 0 then
-            if alpha.isAdmin(name) then
+            if alpha.isAdmin(name) and not alpha.isAdmin(args[2]) then
                 admin_list[#admin_list+1] = name
                 this.setPersistence(alpha.admins, admin_list)
                 print(args[2].." has been promoted to admin")
                 allium.tell(name, "&a"..args[2].." has been promoted to admin")
                 allium.tell(args[2], "&aYou have been Promoted")
+            elseif alpha.isAdmin(args[2]) then
+                data.error(args[2].." is already an admin")
             else
                 data.error("You do not have permission to use this command")
             end
@@ -323,7 +325,7 @@ local function afk(name, _, data)
 end
 
 -- alpha:afk
-this.command("afk", afk, info.afk)
+-- this.command("afk", afk, info.afk) Deprecated due to removal of getPosition for 1.11 and 1.12
 
 local function colors(name)
     allium.tell(name, "&11&22&33&44&55&66&77&88&99&00&aa&bb&cc&dd&ee&ff\\n &r&h[[With hovering text]]newline!&r&i[[https://github.com/hugeblank/alpha]]&b[Link]&r&lBold!&r&nUnderLined!&r&oItallic&r&kMagic!&r&mstrikethrough")
@@ -347,7 +349,7 @@ local function firework(name)
 end
 
 -- alpha:firework
-this.command("firework", firework, info.firework)
+-- this.command("firework", firework, info.firework) Deprecated due to removal of getPosition for 1.11 and 1.12
 
 local function hangmanGame(name, args)
     local hangman = alpha.hangman
@@ -700,7 +702,7 @@ local function warp(name, args, data)
 end
 
 --alpha:warp
-this.command("warp", warp, info.warp, "<warp name | set | list | remove> [warp name] [x] [y] [z]")
+-- this.command("warp", warp, info.warp, "<warp name | set | list | remove> [warp name] [x] [y] [z]") Deprecated due to removal of getPosition for 1.11 and 1.12
 
 local function afklock()
     while true do
